@@ -2,21 +2,22 @@ package edu.upc.eetac.dsa.meseguer.dao;
 
 public class Main {
 	   public static void main(String[] args) {
-	      StudentDao studentDao = new StudentDao();
+	      ProvidersDao providersDao = new ProvidersDao();
 
-	      //print all students
-	      for (Student student : studentDao.getAllStudents()) {
-	         System.out.println("Student: [RollNo : " + student.getRollNo() + ", Name : " + student.getName() + " ]");
+	      //print all providerses
+	      for (Providers providers : providersDao.getAllProviders()) {
+	         System.out.println("Providers: [RollNo : " + providers.getRollNo() + ", Code : " + providers.getCode() + ", Name : " + providers.getName() + " ]");
 	      }
 
 
-	      //update student
-	      Student student = studentDao.getAllStudents().get(0);
-	      student.setName("Michael");
-	      studentDao.updateStudent(student);
+	      //update providers
+	      Providers providers = providersDao.getAllProviders().get(0);
+		   providers.setCode("VIP");
+	      providers.setName("Very important");
+		   providersDao.updateStudent(providers);
 
-	      //get the student
-	      studentDao.getStudent(0);
-	      System.out.println("Student: [RollNo : " + student.getRollNo() + ", Name : " + student.getName() + " ]");		
+	      //get the providers
+	      providersDao.getProviders(0);
+	      System.out.println("Providers: [RollNo : " + providers.getRollNo() + ", Code : " + providers.getCode() + ", Name : " + providers.getName() +" ]");
 	   }
 	}
